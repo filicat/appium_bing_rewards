@@ -15,8 +15,8 @@ if __name__ == '__main__':
         'platformName': 'Android',
         'automationName': 'uiautomator2',
         'deviceName': 'Android',
-        'appPackage': 'com.microsoft.emmx',
-        'appActivity': 'com.microsoft.ruby.Main',
+        'appPackage': 'com.android.chrome', # com.microsoft.emmx
+        'appActivity': 'com.google.android.apps.chrome.Main', # com.microsoft.ruby.Main
         'noReset': True,
         'dontStopAppOnReset': True  # 保持应用运行，不重启
     })
@@ -28,7 +28,7 @@ if __name__ == '__main__':
             input_elem.send_keys(fake.company() + ' ' + fake.name())
             submit_btn = driver.find_element(by=AppiumBy.XPATH, value='//android.widget.Button[@resource-id="sb_form_go"]')
             submit_btn.click()
-            time.sleep(10)
+            time.sleep(45)
     finally:
         easygui.msgbox("搜索完成", title="必应搜索_移动")
         driver.quit()
